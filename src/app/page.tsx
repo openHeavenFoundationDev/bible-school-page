@@ -25,21 +25,53 @@ export default function Home() {
 
       {/* Navbar */}
       <div className="bg-black text-white font-bold px-6 py-4 fixed top-0 w-full z-10">
+        <div className="block md:hidden">
+          <div className="flex justify-center items-center">
+            <Image
+              src="/logo.png"
+              alt="Open Heaven Foundation Logo"
+              width={75}
+              height={100}
+            />
+          </div>
+
+          <h1 className="text-xl text-center">
+            OPEN HEAVEN BIBLE EDUCATION CENTRE
+          </h1>
+        </div>
+
         <div className="flex justify-between items-center">
-          <div className="flex justify-start items-center">
+          <div className="hidden md:flex justify-start items-center">
             <Image
               src="/logo.png"
               alt="Open Heaven Foundation Logo"
               width={75}
               height={100}
               className="mr-6"
-              layout="intrinsic"
             />
 
-            <h1 className="text-3xl ">OPEN HEAVEN BIBLE EDUCATION CENTRE</h1>
+            <h1 className="text-3xl">OPEN HEAVEN BIBLE EDUCATION CENTRE</h1>
           </div>
 
-          <div className="bg-black text-white flex text-md justify-end gap-8 pt-16">
+          <div className="hidden xl:flex bg-black text-white xl:text-md lg:text-sm justify-end gap-8 pt-16">
+            <Link
+              href={linkRegisration}
+              target="_blank"
+              className="hover:text-yellow-500"
+            >
+              REGISTRATION
+            </Link>
+            <Link href="#studyProgram" className="hover:text-yellow-500">
+              PROGRAM
+            </Link>
+            <Link href="#contact" className="hover:text-yellow-500">
+              CONTACT
+            </Link>
+          </div>
+        </div>
+
+        <div className="block xl:hidden bg-black text-white text-xs lg:text-sm mt-4">
+          <div className="flex justify-center lg:justify-end gap-8">
             <Link
               href={linkRegisration}
               target="_blank"
@@ -58,23 +90,24 @@ export default function Home() {
       </div>
 
       {/* Content */}
-      <div className="p-4 pt-36">
+      <div className="p-4 pt-44 lg:pt-40">
         {/* Introduction */}
-        <div className="bg-indigo-950 rounded-3xl grid grid-cols-2 mb-3">
+        <div className="bg-indigo-950 rounded-3xl grid grid-cols-2 mb-6">
           <div className="flex flex-col justify-between">
-            <div className="px-8 pt-8 pb-4 rounded-tl-3xl">
-              <h1 className="font-bold text-yellow-500 text-6xl">
-                THEOLOGICAL
-              </h1>
-              <h1 className="font-bold text-white text-6xl mb-2">SCHOOL</h1>
-              <h1 className="font-bold text-yellow-500 text-2xl">
+            <div className="xl:px-8 xl:pt-8 lg:px-4 lg:pt-4 xl:pb-4 lg:pb-4 rounded-tl-3xl mb-4">
+              <div className="font-bold xl:text-6xl lg:text-5xl md:text-4xl sm:text-3xl mb-2">
+                <h1 className="text-yellow-500">THEOLOGICAL</h1>
+                <h1 className="text-white">SCHOOL</h1>
+              </div>
+
+              <h1 className="font-bold text-yellow-500 xl:text-2xl lg:text-xl md:text-lg sm:text-md">
                 ONLINE CLASS
               </h1>
             </div>
 
-            <div className="flex justify-center items-center gap-8 pb-8 rounded-bl-3xl">
-              <div className="bg-black border-4 border-yellow-500 rounded-3xl flex flex-col justify-between items-center font-semibold text-white w-64 px-6 py-4">
-                <div className="text-center mb-4">
+            <div className="flex justify-center items-center xl:gap-8 lg:gap-4 pb-8 rounded-bl-3xl text-white text-center xl:text-md lg:text-sm md:text-xs">
+              <div className="bg-black xl:border-4 lg:border-2 border-yellow-500 rounded-3xl flex flex-col justify-between items-center font-semibold w-64 px-6 py-6">
+                <div className="mb-4">
                   <p className="mb-4">Gelombang I</p>
                   <p>1 Juni 2024 s/d</p>
                   <p>18 Juni 2024</p>
@@ -83,14 +116,14 @@ export default function Home() {
                 <Link
                   href={linkRegisration}
                   target="_blank"
-                  className="bg-slate-500 hover:bg-slate-700 border-2 border-white hover:border-yellow-500 rounded-xl text-center hover:font-bold w-full px-3 py-1"
+                  className="bg-slate-500 hover:bg-slate-700 border-2 border-white hover:border-yellow-500 rounded-xl hover:font-bold w-full px-3 py-1"
                 >
                   Daftar Sekarang
                 </Link>
               </div>
 
-              <div className="bg-black border-4 border-yellow-500 rounded-3xl flex flex-col justify-between items-center font-semibold text-white w-64 px-6 py-4">
-                <div className="text-center mb-4">
+              <div className="bg-black xl:border-4 lg:border-2 border-yellow-500 rounded-3xl flex flex-col justify-between items-center font-semibold w-64 px-6 py-6">
+                <div className="mb-4">
                   <p className="mb-4">Gelombang II</p>
                   <p>1 September 2024 s/d</p>
                   <p>20 September 2024</p>
@@ -99,7 +132,7 @@ export default function Home() {
                 <Link
                   href={linkRegisration}
                   target="_blank"
-                  className="bg-slate-500 hover:bg-slate-700 border-2 border-white hover:border-yellow-500 rounded-xl text-center hover:font-bold w-full px-3 py-1"
+                  className="bg-slate-500 hover:bg-slate-700 border-2 border-white hover:border-yellow-500 rounded-xl  hover:font-bold w-full px-3 py-1"
                 >
                   Daftar Sekarang
                 </Link>
@@ -107,20 +140,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex justify-start items-center rounded-r-3xl">
+          <div className="flex justify-start items-center rounded-r-3xl pr-6">
             <Image
               src="/theological-class.jpg"
               alt="Theological Class"
               width={1280}
               height={720}
-              className="rounded-r-3xl border-8 border-indigo-950"
-              layout="intrinsic"
+              className="rounded-r-3xl"
             />
           </div>
         </div>
 
         {/* BENEFIT */}
-        <div className="bg-indigo-950 rounded-3xl grid grid-cols-2 mb-3">
+        <div className="bg-indigo-950 rounded-3xl grid grid-cols-2 mb-6">
           <div className="flex justify-start items-center rounded-l-3xl">
             <Image
               src="/graduation.jpg"
@@ -128,7 +160,6 @@ export default function Home() {
               width={1280}
               height={720}
               className="rounded-l-3xl border-8 border-indigo-950"
-              layout="intrinsic"
             />
           </div>
 
@@ -153,7 +184,7 @@ export default function Home() {
         </div>
 
         {/* STUDY PROGRAM */}
-        <div id="studyProgram" className="bg-indigo-950 rounded-3xl p-8 mb-3">
+        <div id="studyProgram" className="bg-indigo-950 rounded-3xl p-8 mb-6">
           <h1 className="font-bold text-yellow-500 text-center text-6xl mb-8">
             STUDY PROGRAM
           </h1>
@@ -171,7 +202,6 @@ export default function Home() {
                     width={170}
                     height={145}
                     className="rounded-full mb-6"
-                    layout="intrinsic"
                   />
                   <Link
                     href={linkRegisration}
@@ -197,7 +227,6 @@ export default function Home() {
                     width={170}
                     height={145}
                     className="rounded-full mb-6"
-                    layout="intrinsic"
                   />
                   <Link
                     href={linkRegisration}
@@ -223,7 +252,6 @@ export default function Home() {
                     width={170}
                     height={145}
                     className="rounded-full mb-6"
-                    layout="intrinsic"
                   />
                   <Link
                     href={linkRegisration}
@@ -249,7 +277,6 @@ export default function Home() {
                     width={170}
                     height={145}
                     className="rounded-full mb-6"
-                    layout="intrinsic"
                   />
                   <Link
                     href={linkRegisration}
@@ -283,7 +310,6 @@ export default function Home() {
                     width={170}
                     height={145}
                     className="rounded-full mb-6"
-                    layout="intrinsic"
                   />
                   <Link
                     href={waPsKevin}
@@ -309,7 +335,6 @@ export default function Home() {
                     width={170}
                     height={145}
                     className="rounded-full mb-6"
-                    layout="intrinsic"
                   />
                   <Link
                     href={waPsDaniel}
@@ -340,11 +365,10 @@ export default function Home() {
             width={24}
             height={24}
             className="mr-2"
-            layout="intrinsic"
           />
           <p>
-            Kantor Cabang Bali: Jl.Kertapura Gg.Segina No.25 Pemecutan
-            Klod Denpasar
+            Kantor Cabang Bali: Jl.Kertapura Gg.Segina No.25 Pemecutan Klod
+            Denpasar
           </p>
         </Link>
 
@@ -359,11 +383,9 @@ export default function Home() {
             width={24}
             height={24}
             className="mr-2"
-            layout="intrinsic"
           />
           <p>
-            Kantor Cabang Papua: Jl. Malibela KM 11 Kota Sorong Papua
-            Barat Daya
+            Kantor Cabang Papua: Jl. Malibela KM 11 Kota Sorong Papua Barat Daya
           </p>
         </Link>
       </footer>
